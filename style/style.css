@@ -1,3 +1,6 @@
+#body{
+    height: 83vh;
+}
 #footer{
     position: absolute;
     bottom: 2px;
@@ -5,6 +8,9 @@
     width: 90%;
     left: 5%;
     right: 5%;
+}
+#wrapper{
+    height: 100%;
 }
 #header{
     font-size: 25px;
@@ -21,4 +27,14 @@
     color: blue;
     font-style: italic;
     font-size : 23px;
+}
+#editor{
+    /* css debug porperties */
+    background-color: yellow;
+    color: black;
+
+    display: flex;
+}
+#editor>div:first-child{
+    flex-grow: 1;
 }

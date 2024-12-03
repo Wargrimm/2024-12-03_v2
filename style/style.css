@@ -23,17 +23,33 @@ body{
 #js{
     color:skyblue;
     font-style: italic;
-    font-size: 23px;
 }
 #wrapper{height: 100%;}
 #editor{
-    /* css debug properties */
-    background-color: blue;
-    color: white;
     height: 100%;
     display: flex;
+    text-align: center;
 }
-#editor>div{border:2px solid grey;}
+
 #editor>div:nth-child(1){
     flex-grow:1;
+}
+#editor>div{
+    padding: 5px 15px;
+}
+#editor>div:nth-child(2){
+    min-width:200px;
+    border-left:1px solid black;
+}
+div.cols{
+    display:flex;
+    justify-content: space-between;
+}
+div.cols>div{
+    width:49%;
+    text-align: center;
+}
+div.cols>div input{
+    width:80px;
+    text-align: center;
 }

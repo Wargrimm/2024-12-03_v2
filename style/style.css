@@ -1,14 +1,17 @@
 div{
     border:1px solid black;
 }
-#Header{
-    color: blue;
+#header{
+    color:blue;
 }
-#Footer{
+#footer{
     position: absolute;
     bottom: 2px;
     text-align: center;
     width: 90%;
-    left: 5%;
-    right: 5%
+    left:5%;
+    right: 5%;
+}
+.bold{
+    font-weight: 900;
 }

@@ -3,9 +3,19 @@
     bottom: 2px;
     text-align: center;
     width: 90%;
-    left:5%;
+    left: 5%;
     right: 5%;
 }
-.bold{
+#header{
+    font-size: 25px;
+    /* padding sert à l'espacement dans l'espace */
+    padding: 15px;
     font-weight: 900;
+    color: tomato;
+}
+#dot{
+    color: black;
+}
+#js{
+    color: blue;
 }

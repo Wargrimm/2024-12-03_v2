@@ -12,10 +12,13 @@
     padding: 15px;
     font-weight: 900;
     color: tomato;
+    text-decoration: underline black;
 }
 #dot{
     color: black;
 }
 #js{
     color: blue;
+    font-style: italic;
+    font-size : 23px;
 }

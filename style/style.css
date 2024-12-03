@@ -1,40 +1,38 @@
-#body{
-    height: 83vh;
+body{
+    height: 83.5vh;
 }
 #footer{
-    position: absolute;
+    position: fixed;
     bottom: 2px;
     text-align: center;
     width: 90%;
-    left: 5%;
+    left:5%;
     right: 5%;
-}
-#wrapper{
-    height: 100%;
+    z-index: 100;
 }
 #header{
-    font-size: 25px;
-    /* padding sert à l'espacement dans l'espace */
-    padding: 15px;
+    font-size:25px;
+    padding:15px;
     font-weight: 900;
     color: tomato;
-    text-decoration: underline black;
+    text-decoration: underline grey;
 }
 #dot{
-    color: black;
+    color:black;
 }
 #js{
-    color: blue;
+    color:skyblue;
     font-style: italic;
-    font-size : 23px;
 }
+#wrapper{height: 100%;}
 #editor{
-    /* css debug porperties */
-    background-color: yellow;
-    color: black;
-
+    /* css debug properties */
+    background-color: blue;
+    color: white;
+    height: 100%;
     display: flex;
 }
-#editor>div:first-child{
-    flex-grow: 1;
+#editor>div{border:2px solid grey;}
+#editor>div:nth-child(1){
+    flex-grow:1;
 }

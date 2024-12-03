@@ -1,0 +1,1 @@
+alert("Le fichier Js n'est pas chargé");

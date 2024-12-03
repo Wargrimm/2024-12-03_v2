@@ -23,6 +23,7 @@ body{
 #js{
     color:skyblue;
     font-style: italic;
+    font-size: 23px;
 }
 #wrapper{height: 100%;}
 #editor{

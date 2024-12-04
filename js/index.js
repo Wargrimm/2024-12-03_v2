@@ -5,7 +5,7 @@ function loadingDOM() {
     document.querySelector("#js-notification").remove();
     document.querySelector("#header button").remove();
     loadNavbarEvents();
-    // loadEditorEvent();
+    //loadEditorEvent();
   }
   /**
    * Fonction de chargement des events de navbar
@@ -19,12 +19,11 @@ function loadingDOM() {
     //   })
     // }
     aList.forEach(function (element) {
-      element.addEventListener("click", function (evt) {
+      element.addEventListener("click", (evt) => {
         evt.preventDefault();
-        history.pushState(null,null,element.href)
+        history.pushState(null,null,evt.target.href);
       });
     });
   }
   document.addEventListener("DOMContentLoaded", loadingDOM);
-
-  var router = new Router();
+  var router=new Router();

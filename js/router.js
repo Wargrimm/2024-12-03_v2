@@ -28,6 +28,7 @@ function Router(rootFolderOfTemplates = "/pages") {
         }
         console.log(xhr.responseText);
       };
+      xhr.send();
     }
   
     /*definition des acces exterieurs a l'instance */

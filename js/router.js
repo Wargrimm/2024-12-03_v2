@@ -28,7 +28,6 @@ function Router(rootFolderOfTemplates = "/pages") {
         }
         console.log(xhr.responseText);
       };
-      xhr.send();
     }
   
     /*definition des acces exterieurs a l'instance */
@@ -60,7 +59,7 @@ function Router(rootFolderOfTemplates = "/pages") {
           url += "/home/home.html";
           break;
       }
-      getContentFromNetwork(url);
+      getContentFromNetwork();
       loadContentInPage();
     }
   }

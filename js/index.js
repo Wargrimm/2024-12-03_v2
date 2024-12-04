@@ -4,7 +4,11 @@ function loadingDOM() {
   notif.style.backgroundColor = "green";
   notif.innerHTML =
     'le <span style="font-weight:900;color:blue;">JS</span> est ok';
+  document
+    .querySelector("button.btn-danger")
+    .addEventListener("click", function () {
+      console.log("bouton du header cliqué");
+    });
 }
 
-document.addEventListener(DOMContentLoaded,loadingDOM);
-
+document.addEventListener(DOMContentLoaded, loadingDOM);

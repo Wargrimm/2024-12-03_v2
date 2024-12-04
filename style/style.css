@@ -1,11 +1,12 @@
-#notification{
-    font-size:xx-large;
+#js-notification{
+    font-size: xx-large;
     font-weight: 900;
     background-color: tomato;
-    color:white;
-    text-align:center;
-    padding:0 10px;
+    color: white;
+    text-align: center;
+    padding: 0 10px;
 }
+
 body{
     height: 83.5vh;
 }

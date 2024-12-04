@@ -10,7 +10,7 @@ function loadingDOM() {
    * Fonction de chargement des events de navbar
    */
   function loadNavbarEvents() {
-    var aList = document.querySelectorAll("nav a");
+    var aList = document.querySelectorAll("a");
     // for(var i=0;i<aList.length;i++){
     //   aList[i].addEventListener('click',function(evt){
     //     evt.preventDefault();
@@ -20,6 +20,7 @@ function loadingDOM() {
     aList.forEach(function (element) {
       element.addEventListener("click", function (evt) {
         evt.preventDefault();
+        history.pushState(null,null,element.href)
       });
     });
   }

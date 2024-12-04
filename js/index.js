@@ -1,14 +1,21 @@
-// alert("Le fichier Js n'est pas chargé");
 function loadingDOM() {
-  var notif = document.querySelector("#js-notification");
-  notif.style.backgroundColor = "green";
-  notif.innerHTML =
-    'le <span style="font-weight:900;color:blue;">JS</span> est ok';
-  document
-    .querySelector("button.btn-danger")
-    .addEventListener("click", function () {
-      console.log("bouton du header cliqué");
-    });
-}
-
-document.addEventListener(DOMContentLoaded, loadingDOM);
+    var js = document.querySelector("#js-notification");
+    js.style.backgroundColor = "GREEN";
+    js.innerHTML =
+      'le <span style="font-weight:900;color :blue;">JS</span> est OK';
+    document
+      .querySelector("button.btn-danger")
+      .addEventListener("click", function (evt) {
+        evt.stopPropagation();
+        console.log('button',evt);
+        console.log("button du header clické");
+      });
+      document
+      .querySelector("#header")
+      .addEventListener("click", function (evt) {
+        console.log('header',evt);
+        console.log("header clické");
+      });
+  }
+  
+  document.addEventListener("DOMContentLoaded", loadingDOM);

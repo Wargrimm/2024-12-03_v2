@@ -8,7 +8,7 @@ privé pas sur this
     +modif contenu(loadEvents)
     +recuperation du contenu de page depuis le reseau
 */
-function Router(rootFolderOfTemplates = "/pages") {
+function Router(rootNode,rootFolderOfTemplates = "/pages") {
     /*definitions locales(interne) des propriétés et fonctions */
     var currentRoute = location.pathname;
     function changePathName(pathName) {
@@ -27,7 +27,9 @@ function Router(rootFolderOfTemplates = "/pages") {
           console.log("erreur" + xhr.status);
         }
         console.log(xhr.responseText);
+        rootNode.innerHTML=xhr.responseText;
       };
+      xhr.send();
     }
   
     /*definition des acces exterieurs a l'instance */
@@ -59,7 +61,7 @@ function Router(rootFolderOfTemplates = "/pages") {
           url += "/home/home.html";
           break;
       }
-      getContentFromNetwork();
+      getContentFromNetwork(url);
       loadContentInPage();
     }
   }

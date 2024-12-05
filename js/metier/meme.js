@@ -15,7 +15,8 @@ class Meme{
     }
     save() {
         console.log("save at"+this.#endpoint, this);
-
+        this.publicSave;
+        this.privateSave;
     }
     publicSave() {
         console.log('public save');

@@ -10,14 +10,36 @@ privé pas sur this
 */
 function Router(rootNode, rootFolderOfTemplates = "/pages") {
   /*definitions locales(interne) des propriétés et fonctions */
+  /**
+   * route courrante avec informations de route
+   */
   var currentRoute = location.pathname;
   function changePathName(pathName) {
     history.pushState(null, null, pathName);
-    currentRoute = location.pathname;
+    var route = {};
+    route.url = rootFolderOfTemplates;
+    switch (pathName) {
+      case "/thumbnail":
+        route.url += "/thumbnail/thumbnail.html";
+        break;
+      case "/editor":
+        route.url += "/editor/editor.html";
+        route.loaderJs = loadEditorEvent;
+        break;
+      default:
+        route.url += "/home/home.html";
+        break;
+    }
+    route.pathName = pathName;
+    currentRoute = route;
   }
+  /**
+   *
+   * @param {object} routeObject
+   */
   function loadContentInPage(routeObject) {
     rootNode.innerHTML = routeObject.template;
-    if(typeof routeObject.loaderJs == 'function') {
+    if (typeof routeObject.loaderJs === "function") {
       routeObject.loaderJs();
     }
   }
@@ -56,23 +78,8 @@ function Router(rootNode, rootFolderOfTemplates = "/pages") {
   this.navigate = navigate;
   function navigate(pathName = "/") {
     changePathName(pathName);
-    // var url = rootFolderOfTemplates;
-    var route = {};
-    route.url = rootFolderOfTemplates;
-    switch (pathName) {
-      case "/thumbnail":
-        route.url += "/thumbnail/thumbnail.html";
-        break;
-      case "/editor":
-        route.url += "/editor/editor.html";
-        route.loaderJs = loadEditorEvent;
-        break;
-      default:
-        route.url += "/home/home.html";
-        break;
-    }
+
     getContentFromNetwork(route);
-    // loadContentInPage();
   }
   navigate(location.pathname);
 }

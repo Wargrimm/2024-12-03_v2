@@ -3,20 +3,20 @@ var routes = [
   {
     name: "Thumbnail",
     path: "/thumbnail",
-    url: "/pages/thumbnail/thumbnail.html"
+    url: "/pages/thumbnail/thumbnail.html",
   },
   {
     name: "Editor",
     path: "/edit",
     url: "/pages/editor/editor.html",
-    loaderJs: loadEditorEvent
+    loaderJs: loadEditorEvent,
   },
   {
     name: "Home",
     path: "/",
-    url: "/pages/home/home.html"
+    url: "/pages/home/home.html",
   },
-]
+];
 
 /* besoins routeur
 public -> sur this
@@ -41,7 +41,7 @@ function Router(rootNode) {
   function changePathName(pathName) {
     history.pushState(null, null, pathName);
     var route = undefined;
-    var route = routes.find((route) => route.path===pathName);
+    var route = routes.find((route) => route.path === pathName);
     route.pathName = pathName;
     currentRoute = route;
   }
@@ -90,7 +90,11 @@ function Router(rootNode) {
   this.navigate = navigate;
   function navigate(pathName = "/") {
     changePathName(pathName);
-    getContentFromNetwork(currentRoute);
+    if (undefined !== currentRoute.template) {
+      loadContentInPage(currentRoute);
+    } else {
+      getContentFromNetwork(currentRoute);
+    }
   }
   navigate(location.pathname);
 }

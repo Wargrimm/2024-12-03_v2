@@ -1,4 +1,3 @@
-// tableau des routes possibles
 var routes = [
   {
     name: "Thumbnail",
@@ -17,7 +16,6 @@ var routes = [
     url: "/pages/home/home.html",
   },
 ];
-
 /* besoins routeur
 public -> sur this
     +page actuelle champs lecture
@@ -40,8 +38,7 @@ function Router(rootNode) {
    */
   function changePathName(pathName) {
     history.pushState(null, null, pathName);
-    var route = undefined;
-    var route = routes.find((route) => route.path === pathName);
+    var route = routes.find((r)=>r.path===pathName);
     route.pathName = pathName;
     currentRoute = route;
   }
@@ -90,11 +87,7 @@ function Router(rootNode) {
   this.navigate = navigate;
   function navigate(pathName = "/") {
     changePathName(pathName);
-    if (undefined !== currentRoute.template) {
-      loadContentInPage(currentRoute);
-    } else {
-      getContentFromNetwork(currentRoute);
-    }
+    getContentFromNetwork(currentRoute);
   }
   navigate(location.pathname);
 }

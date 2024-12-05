@@ -38,7 +38,7 @@ function Router(rootNode) {
    */
   function changePathName(pathName) {
     history.pushState(null, null, pathName);
-    var route = routes.find((r)=>r.path===pathName);
+    var route = routes.find(r=>r.path===pathName);
     route.pathName = pathName;
     currentRoute = route;
   }

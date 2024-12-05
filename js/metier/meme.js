@@ -20,7 +20,7 @@ class Meme {
       console.log("constructor de meme");
     }
     save() {
-      fetch(
+        const promise = fetch(
         `http://localhost:5679${this.#endpoint}${
           undefined !== this.id ? "/" + this.id : ""
         }`,
@@ -32,10 +32,11 @@ class Meme {
           body: JSON.stringify(this),
         }
       )
-        .then((r) => r.json())
-        .then((o) => {
+        promise.then((r) => r.json())
+        promise.then((o) => {
           Object.assign(this, o);
-        });
+        })
+        return promise;
       // console.log("save " + this.id + " at " + this.#endpoint, this);
       // this.publicSave();
       // this.#privateSave();

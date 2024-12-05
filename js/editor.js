@@ -1,5 +1,4 @@
-let currentMeme = newMeme();
-
+let currentMeme = new Meme();
 function loadEditor(params) {
   console.log(params);
   loadEditorEvent();
@@ -7,15 +6,34 @@ function loadEditor(params) {
     loadSelectImagesInForm(arrayImages);
   });
 }
-
+function treatInputStringEventChange(evt) {
+  currentMeme[evt.target.name] = evt.target.value;
+}
+function treatInputNumberEventChange(evt) {
+  currentMeme[evt.target.name] = parseInt(evt.target.value);
+}
+function treatCheckEventChange(evt) {
+  currentMeme[evt.target.name] = evt.target.checked;
+}
 function loadEditorEvent() {
-  console.log(router.getCurrentRoute());
   document.forms["editor-form"].addEventListener("submit", function (evt) {
     evt.preventDefault();
-    console.log("form submit");
+    currentMeme.save();
   });
+  document.forms["editor-form"]["text"].addEventListener("input", treatInputStringEventChange);
+  document.forms["editor-form"]["imageId"].addEventListener("change", treatInputNumberEventChange);
+  document.forms["editor-form"]["x"].addEventListener("change", treatInputNumberEventChange);
+  document.forms["editor-form"]["y"].addEventListener("change", treatInputNumberEventChange);
+  document.forms["editor-form"]["color"].addEventListener("change", treatInputStringEventChange);
+  document.forms["editor-form"]["fontSize"].addEventListener("change", treatInputNumberEventChange);
+  document.forms["editor-form"]["fontWeight"].addEventListener("change", treatInputStringEventChange);
+  document.forms["editor-form"]["underline"].addEventListener("change", treatCheckEventChange);
+  document.forms["editor-form"]["italic"].addEventListener("change", treatCheckEventChange);
 }
-
+/**
+ *
+ * @param {Images} images
+ */
 const loadSelectImagesInForm = (images) => {
   const select = document.forms["editor-form"]["imageId"];
   const optionBase = select.children[0];
@@ -27,12 +45,5 @@ const loadSelectImagesInForm = (images) => {
     optionClone.innerHTML = image.name;
     select.appendChild(optionClone);
   });
-  debugger;
+  // debugger;
 };
-
-function loadSaisieText() {
-  document.forms["editor-text"].addEventListener("input", function (evt) {
-    // evt.preventDefault();
-    console.log("form submit");
-  });
-}

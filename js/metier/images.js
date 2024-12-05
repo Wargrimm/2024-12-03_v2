@@ -25,9 +25,7 @@ class Images extends Array {
           console.log(r);
           return r.json();
         })
-        .then((a) => {
-            return Object.assign(this, a);
-        })
+        .then((a) => Object.assign(this, a));
     }
   }
   const images = new Images();

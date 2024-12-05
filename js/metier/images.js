@@ -19,5 +19,5 @@ class images extends Array {
     return promise;
   }
 }
-let images = new images();
-images.load();
+const images = new images();
+const promiseImage = images.load();

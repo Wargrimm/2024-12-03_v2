@@ -39,12 +39,12 @@ function Router(rootNode) {
   function changePathName(pathName) {
     history.pushState(null, null, pathName);
     var m;
-    var route = routes.find((r) => {
-      var m = r.path.exec(pathName);
-      return m !== null;
+    var route = routes.find((r) =>{
+       m=r.path.exec( pathName);
+       return m!==null; 
     });
-    if (undefined !== route) {
-      route.params = m.groups;
+    if(undefined!==route){
+        route.params = m.groups;
     }
     route.pathName = pathName;
     currentRoute = route;

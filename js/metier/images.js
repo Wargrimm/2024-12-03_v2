@@ -8,10 +8,14 @@ class images extends Array {
     super.find(params);
   }
   load() {
-    const promise = fetch().then((r) => r.json());
-
-    promise.then((a) => {});
-
+    return fetch(`http://localhost:5679${this.#endpoint}`, {
+        headers: {Accept: "aplication/json"},
+        method: "GET",
+    })
+    then((r) => r.json());
+    then((a) => {
+        Object.assign(this,a);
+    });
     return promise;
   }
 }

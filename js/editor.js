@@ -1,3 +1,5 @@
+let currentMeme = newMeme();
+
 function loadEditor(params) {
   console.log(params);
   loadEditorEvent();
@@ -27,3 +29,10 @@ const loadSelectImagesInForm = (images) => {
   });
   debugger;
 };
+
+function loadSaisieText() {
+  document.forms["editor-text"].addEventListener("input", function (evt) {
+    // evt.preventDefault();
+    console.log("form submit");
+  });
+}

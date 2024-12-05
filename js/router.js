@@ -74,4 +74,5 @@ function Router(rootNode, rootFolderOfTemplates = "/pages") {
     getContentFromNetwork(route);
     // loadContentInPage();
   }
+  navigate(location.pathname);
 }

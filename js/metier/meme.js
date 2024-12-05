@@ -1,6 +1,9 @@
-class Meme{
+/**
+ * class de gestion d'un meme
+ */
+class Meme {
     id = undefined;
-    text = "undefined"
+    text = "";
     x = 0;
     y = 10;
     fontSize = 10;
@@ -8,22 +11,25 @@ class Meme{
     underline = false;
     italic = false;
     color = "#FFFFFF";
-    imageId= -1;
-    #endpoint='/memes';
+    imageId = -1;
+    #endpoint = "/memes";
+    /**
+     * constructor de meme
+     */
     constructor() {
-        console.log("constructeur de meme")
+      console.log("constructor de meme");
     }
     save() {
-        console.log("save at"+this.#endpoint, this);
-        this.publicSave;
-        this.privateSave;
+      console.log("save " + this.id + " at " + this.#endpoint, this);
+      this.publicSave();
+      this.#privateSave();
     }
     publicSave() {
-        console.log('public save');
+      console.log("public saving");
     }
-    privateSave() {
-        console.log('private save');
+    #privateSave() {
+      console.log("private saving");
     }
-}
-let meme = new Meme();
-meme.save();
+  }
+  let meme = new Meme();
+  meme.save();

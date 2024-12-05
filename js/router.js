@@ -1,3 +1,23 @@
+// tableau des routes possibles
+var routes = [
+  {
+    name: "Thumbnail",
+    path: "/thumbnail",
+    url: "/pages/thumbnail/thumbnail.html"
+  },
+  {
+    name: "Editor",
+    path: "/edit",
+    url: "/pages/editor/editor.html",
+    loaderJs: loadEditorEvent
+  },
+  {
+    name: "Home",
+    path: "/",
+    url: "/pages/home/home.html"
+  },
+]
+
 /* besoins routeur
 public -> sur this
     +page actuelle champs lecture

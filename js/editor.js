@@ -8,6 +8,8 @@ function loadEditor(params) {
   promiseImage.then((arrayImages) => {
     loadSelectImagesInForm(arrayImages);
   });
+  updateForm();
+  updateSVG();
 }
 function treatInputStringEventChange(evt) {
   currentMeme[evt.target.name] = evt.target.value;
@@ -116,3 +118,17 @@ const updateSVG = (meme, svgRootNode) => {
     svgRootNode.insertBefore(image, text);
   }
 };
+
+const updateForm = () => {
+  document.forms["editor-form"]["text"].value = meme.text;
+  document.forms["editor-form"]["x"].value = meme.x;
+  document.forms["editor-form"]["y"].value = meme.y;
+  document.forms["editor-form"]["color"].value = meme.color;
+  document.forms["editor-form"]["imageId"].value = meme.imageId;
+  document.forms["editor-form"]["fontWeight"].value = meme.fontWeight;
+  document.forms["editor-form"]["fontSize"].value = meme.fontSize;
+  document.forms["editor-form"]["italic"].value = meme.italic;
+  document.forms["editor-form"]["underline"].value = meme.underline;
+}
+
+// const updateSVG() => {}

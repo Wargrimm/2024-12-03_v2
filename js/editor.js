@@ -8,7 +8,7 @@ function loadEditor(params) {
   promiseImage.then((arrayImages) => {
     loadSelectImagesInForm(arrayImages);
     updateForm(currentMeme);
-    // updateSVG();
+    updateSVG(editorRootSvg);
   });
 
 }

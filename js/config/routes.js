@@ -1,8 +1,11 @@
+import { loadThumbnail } from "../thumbnail";
+
 export const routes = [
     {
       name: "Thumbnail",
       path: /^\/thumbnail$/,
       url: "/pages/thumbnail/thumbnail.html",
+      loaderJs: loadThumbnail,
     },
     {
       name: "Editor",

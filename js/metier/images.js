@@ -10,7 +10,7 @@ class Images extends Array {
      */
     find(params) {
       console.log(params);
-      super.find(params);
+      return super.find(params);
     }
     /**
      * chargement de la liste d'images a partir du serveur REST

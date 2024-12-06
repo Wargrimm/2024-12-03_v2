@@ -7,9 +7,10 @@ function loadEditor(params) {
   loadEditorEvent();
   promiseImage.then((arrayImages) => {
     loadSelectImagesInForm(arrayImages);
+    updateForm(currentMeme);
+    // updateSVG();
   });
-  updateForm();
-  updateSVG();
+
 }
 function treatInputStringEventChange(evt) {
   currentMeme[evt.target.name] = evt.target.value;
